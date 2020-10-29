@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6d-8b-gSF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="GdK-Gi-r4S">
+            <objects>
+                <tabBarController id="Y6d-8b-gSF" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ryv-ko-iTb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="5pv-Y9-8mM" kind="relationship" relationship="viewControllers" id="eum-v9-495"/>
+                        <segue destination="nQk-Ot-1al" kind="relationship" relationship="viewControllers" id="geh-4y-lNQ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lEM-zC-TAF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1533" y="-310"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="xNI-0w-JR5">
+            <objects>
+                <tableViewController id="nQk-Ot-1al" customClass="FavoritesTableViewController" customModule="ChuckNorrisJokes" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="FbD-Sz-1KV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="WKH-bj-Wzs" style="IBUITableViewCellStyleDefault" id="k9j-Fw-xKZ" customClass="JokeTableViewCell" customModule="ChuckNorrisJokes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="k9j-Fw-xKZ" id="TsF-ed-wSc">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WKH-bj-Wzs">
+                                            <rect key="frame" x="20" y="0.0" width="374" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="nQk-Ot-1al" id="5W1-hl-NDU"/>
+                            <outlet property="delegate" destination="nQk-Ot-1al" id="ibJ-Ty-0Wk"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Favorites" image="star" catalog="system" id="hLf-0O-zFU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gMi-HD-WeI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="281.15942028985512" y="-38.169642857142854"/>
+        </scene>
+        <!--Categories Table View Controller-->
+        <scene sceneID="Oag-zz-xAq">
+            <objects>
+                <tableViewController id="Ufj-Cd-Xec" customClass="CategoriesTableViewController" customModule="ChuckNorrisJokes" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="e87-eP-O2n">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="bEz-CJ-xAR" customClass="JokeTableViewCell" customModule="ChuckNorrisJokes" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="55.5" width="414" height="46.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bEz-CJ-xAR" id="FA2-hV-7Rx">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="46.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8gX-QQ-lhe">
+                                            <rect key="frame" x="182" y="12.5" width="50.5" height="22"/>
+                                            <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="8gX-QQ-lhe" firstAttribute="centerX" secondItem="FA2-hV-7Rx" secondAttribute="centerX" id="1Bt-on-jA9"/>
+                                        <constraint firstItem="8gX-QQ-lhe" firstAttribute="centerY" secondItem="FA2-hV-7Rx" secondAttribute="centerY" id="VMT-4J-voF"/>
+                                        <constraint firstItem="8gX-QQ-lhe" firstAttribute="top" relation="greaterThanOrEqual" secondItem="FA2-hV-7Rx" secondAttribute="top" constant="12" id="gTX-JE-7gd"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="centerTextLabel" destination="8gX-QQ-lhe" id="QxC-kA-SkC"/>
+                                    <segue destination="fuM-wi-Ocy" kind="show" id="77N-AP-vDK"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Ufj-Cd-Xec" id="dn9-Wu-5gR"/>
+                            <outlet property="delegate" destination="Ufj-Cd-Xec" id="tXG-nj-e6X"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Ilx-Os-czp"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eku-3a-KKd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="268.1159420289855" y="-678.34821428571422"/>
+        </scene>
+        <!--Joke View Controller-->
+        <scene sceneID="9IB-od-wIQ">
+            <objects>
+                <viewController id="fuM-wi-Ocy" customClass="JokeViewController" customModule="ChuckNorrisJokes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3dr-gd-pkM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n25-jL-Q6z">
+                                <rect key="frame" x="200" y="108" width="14.5" height="21.5"/>
+                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8fx-Y5-ySN"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="n25-jL-Q6z" firstAttribute="top" secondItem="8fx-Y5-ySN" secondAttribute="top" constant="20" id="PD1-Vw-QlI"/>
+                            <constraint firstItem="n25-jL-Q6z" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8fx-Y5-ySN" secondAttribute="leading" constant="12" id="eFk-Fv-OcI"/>
+                            <constraint firstItem="n25-jL-Q6z" firstAttribute="centerX" secondItem="8fx-Y5-ySN" secondAttribute="centerX" id="fHD-bC-KuO"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oZ7-p5-aLc">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="agF-eb-Tfp">
+                            <connections>
+                                <action selector="tapped:" destination="fuM-wi-Ocy" id="4Nh-d8-YNR"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textLabel" destination="n25-jL-Q6z" id="MCk-st-S62"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k3Q-I1-6kF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1102.8985507246377" y="-678.34821428571422"/>
+        </scene>
+        <!--Categories-->
+        <scene sceneID="VLp-s7-87C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5pv-Y9-8mM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Categories" image="list.bullet.rectangle" catalog="system" id="sjh-Mm-LuF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="5MS-RE-WBr">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ufj-Cd-Xec" kind="relationship" relationship="rootViewController" id="Lo5-hj-dgb"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pKE-Pc-hZh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-642.02898550724638" y="-678.34821428571422"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="list.bullet.rectangle" catalog="system" width="128" height="93"/>
+        <image name="star" catalog="system" width="128" height="116"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
