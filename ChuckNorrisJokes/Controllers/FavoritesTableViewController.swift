@@ -15,8 +15,10 @@ class FavoritesTableViewController: UITableViewController {
         }
     }
 
+    // We use this method so that the table can be realoded with the latest saved jokes each time it is shown
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // This will trigger the didSet observer and thus the reloding of the table
         jokes = StorageManager.shared.jokes
     }
 }
