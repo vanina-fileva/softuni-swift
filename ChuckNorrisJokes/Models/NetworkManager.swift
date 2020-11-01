@@ -26,8 +26,8 @@ class NetworkManager {
     }
     var delegate: NetworkManagerDelegate?
     
-    typealias GetCategoriesClosure = ([String])->()
-    func getCategories(closure: @escaping ([String])->()) {
+    
+    func getCategories() {
         guard let url = URL(string: baseURLString + "categories") else {
             return
         }
@@ -38,7 +38,8 @@ class NetworkManager {
                     .jsonObject(with: data, options: .allowFragments) as? [String] else {
                 return
             }
-            closure(categories)
+            self.delegate?.didGet(categories: categories)
+        
         })
         task.resume()
     }

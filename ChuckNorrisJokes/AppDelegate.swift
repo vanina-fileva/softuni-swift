@@ -11,9 +11,9 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
-
+    // This method is called when the app is launched. The options parameters tells us how it was launched
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // Load the jokes that were saved to the disk into memory
         StorageManager.shared.loadJokes()
         return true
     }

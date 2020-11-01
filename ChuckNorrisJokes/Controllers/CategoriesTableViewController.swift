@@ -19,10 +19,11 @@ class CategoriesTableViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        networkManager.getCategories { [weak self] (categories) in
-            self?.categories = categories
-        }
+        networkManager.delegate = self
+        networkManager.getCategories()
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,4 +53,10 @@ extension CategoriesTableViewController {
         return cell
     }
     
+}
+
+extension CategoriesTableViewController: NetworkManagerDelegate {
+    func didGet(categories: [String]) {
+        self.categories = categories
+    }
 }
