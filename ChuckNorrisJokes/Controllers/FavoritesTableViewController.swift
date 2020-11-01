@@ -9,7 +9,11 @@ import UIKit
 
 class FavoritesTableViewController: UITableViewController {
     
-    var jokes: [String]?
+    var jokes: [String]? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

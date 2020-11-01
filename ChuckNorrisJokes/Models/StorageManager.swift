@@ -11,7 +11,11 @@ class StorageManager {
     
     static var shared = StorageManager()
     
-    lazy var jokes: [String] = []
+    lazy var jokes: [String] = [] {
+        didSet {
+            saveJokes()
+        }
+    }
     
     func saveJokes() {
         UserDefaults.standard.set(jokes, forKey: "jokes")

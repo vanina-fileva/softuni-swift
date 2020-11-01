@@ -17,10 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         StorageManager.shared.loadJokes()
         return true
     }
-    
-    func applicationWillTerminate(_ application: UIApplication) {
-        StorageManager.shared.saveJokes()
-    }
 
     // MARK: UISceneSession Lifecycle
 

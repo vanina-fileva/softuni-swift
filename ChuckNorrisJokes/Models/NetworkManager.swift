@@ -21,14 +21,14 @@ extension NetworkManagerDelegate {
 
 class NetworkManager {
     
-    private var baseURL: URL? {
-        return URL(string: "https://api.chucknorris.io/jokes/")
+    private var baseURLString: String {
+        return "https://api.chucknorris.io/jokes/"
     }
     var delegate: NetworkManagerDelegate?
     
     typealias GetCategoriesClosure = ([String])->()
     func getCategories(closure: @escaping ([String])->()) {
-        guard let url = baseURL?.appendingPathComponent("categories") else {
+        guard let url = URL(string: baseURLString + "categories") else {
             return
         }
         let request = URLRequest(url: url)
@@ -45,7 +45,7 @@ class NetworkManager {
     
     func getRandomJoke(in category: String?) {
         guard let category = category,
-              let url = baseURL?.appendingPathComponent("random?category=\(category)") else {
+              let url = URL(string: baseURLString + "random?category=\(category)") else {
             return
         }
         let request = URLRequest(url: url)
